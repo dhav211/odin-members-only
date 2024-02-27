@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <header>
+      <h1>Members Only</h1>
+      <div class="user-area">
+        <% if user_signed_in? %>
+          <%= current_user.username %>
+          <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "header-button" %>
+        <% else %>
+          <%= button_to 'Sign In', user_session_path, class: "header-button" %>
+          <%= button_to 'Sign Up', user_registration_path, class: "header-button" %>
+        <% end %>
+      </div>
+    </header>
     <%= render "shared/flash" %>
     <%= yield %>
   </body>

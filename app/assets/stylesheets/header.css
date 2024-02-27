@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 2rem;
+    background-color: #3581B8;
+}
+
+header > .user-area {
+    display: flex;
+    align-items: center;
+}
+
+.header-button {
+    margin: 0 .5rem;
+}
