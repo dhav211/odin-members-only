@@ -1,0 +1,16 @@
+#new-post-container > form {
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#new-post-container > form > textarea {
+    resize: none;
+    margin-bottom: .5rem;
+}
+
+#posts-container {
+    background-color: #C0BCB5;
+    margin: 1rem 2rem;
+    padding: .5rem;
+}

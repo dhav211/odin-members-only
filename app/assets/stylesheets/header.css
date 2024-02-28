@@ -14,3 +14,16 @@ header > .user-area {
 .header-button {
     margin: 0 .5rem;
 }
+
+.notice, .alert {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.notice {
+    background-color: #0E954F;
+}
+
+.alert {
+    background-color: #ED474A;
+}
