@@ -1,9 +1,11 @@
-<div id="new-post-container">
-  <%= form_with model: @new_post do |form| %>
-    <%= form.text_area :text %>
-    <%= form.submit %>
-  <% end %>
-</div>
+<% if user_signed_in? %>
+  <div id="new-post-container">
+    <%= form_with model: @new_post do |form| %>
+      <%= form.text_area :text %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+<% end %>
 
 <div id="posts-container">
   <% @posts.each do |post| %>
