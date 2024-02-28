@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @current_post_page = params[:current_page].to_i ||= 0
+    @number_of_posts = Post.all.size
+    @displayed_posts = Post.offset(10 * @current_post_page).limit(10).order(created_at: :desc)
     @new_post = Post.new
   end
 

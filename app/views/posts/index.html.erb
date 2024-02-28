@@ -8,7 +8,7 @@
 <% end %>
 
 <div id="posts-container">
-  <% @posts.each do |post| %>
+  <% @displayed_posts.each do |post| %>
     <% if user_signed_in? %>
       <span><i><%= post.user.username %></i></span>
     <% else %>
@@ -16,5 +16,15 @@
     <% end %>
     <span> • <%= post.created_at.strftime('%m/%d/%Y') %></span>
     <p><%= post.text %></p>
+  <% end %>
+</div>
+
+<div id="post-navigator-container">
+  <% if @current_post_page > 0 %>
+    <%= link_to '< Previous', posts_path(:current_page => @current_post_page - 1) %>
+  <% end %>
+
+  <% if @current_post_page * 10 < @number_of_posts.round(-1) %>
+    <%= link_to 'Next >', posts_path(:current_page => @current_post_page + 1) %>
   <% end %>
 </div>
